@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <!--移动端布局-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>404</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+</head>
+<body>
+
+<!--导航-->
+<!--ui inverted segment是一个黑色的条，inverted是变成黑色的（反转），attached是让黑条没有圆角贴附在上面-->
+<nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu ">
+            <h2 class="ui teal header item">blog</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+            <!--用div把搜索框包起来放到右边-->
+            <div class="right item m-mobile-hide">
+                <div class="ui icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+
+
+
+
+<div class="m-container-small m-padded-tb-massive">
+    <div class="ui error message m-padded-tb-huge" >
+        <div class="ui container">
+            <h2>500</h2>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<footer class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <!--二维码列-->
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../../static/image/wechat.png" class="ui rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+
+            </div>
+            <!--第二列，占3个div（一个16个）-->
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                </div>
+            </div>
+            <!--第三列-->
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Tel:18342210855</a>
+                    <a href="#" class="item">Email:438599598@qq.com</a>
+                    <a href="#" class="item">WeChat:18342210855</a>
+                </div>
+            </div>
+            <!--最后一列-->
+            <div class="seven wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">BLOG</h4>
+                <p class=" m-text-thin m-text-spaced m-opacity-mini">yyy的个人博客</p>
+            </div>
+        </div>
+
+        <!--最底部的线-->
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-tiny">
+            2021 Designed by yyy
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

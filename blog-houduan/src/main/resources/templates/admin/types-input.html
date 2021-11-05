@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <!--移动端布局-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>分类新增</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.2.4/semantic.min.css" rel="stylesheet">
+    <link href="../../static/css/me.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css">
+</head>
+<body>
+<!--导航-->
+<!--ui inverted segment是一个黑色的条，inverted是变成黑色的（反转），attached是让黑条没有圆角贴附在上面-->
+<nav th:replace="admin/_fragments :: menu(2)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu ">
+            <h2 class="ui teal header item">管理后台</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>博客</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+            <div class="right m-item m-mobile-hide menu">
+                <div class="ui dropdown item">
+                    <div class="text">
+                        <img src="https://picsum.photos/id/1/100/100" class="ui avatar image">
+                        yyy
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" class="item">注销</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<!--<div class="ui attached menu">-->
+<!--    <div class="ui container">-->
+<!--        <a href="#" class="active teal item">发布</a>-->
+<!--        <a href="#" class="item">列表</a>-->
+<!--    </div>-->
+<!--</div>-->
+<!--中间内容-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<div class="m-container-small m-padded-tb-big">
+    <!--ui container是一个自适应的响应式的布局，会自动调整，最好把东西放到这里面-->
+    <div class="ui container">
+        <!--action判断id是否为空，来判断是修改还是新增，走不同的post接口-->
+        <form action="#" method="post" th:object="${type}" th:action="*{id}==null ? @{/admin/types} : @{/admin/types/{id}(id=*{id})}"  class="ui form">
+            <input type="hidden" name="id" th:value="*{id}">
+            <div class="required field">
+                <div class="ui left labeled input">
+                    <label class="ui teal basic label">名称</label>
+                    <!--这里的name对象再提交后会自动封装到Type对象中-->
+                    <input type="text" name="name" placeholder="分类名称" th:value="*{name}">
+                </div>
+            </div>
+
+            <div class="ui error message"></div>
+            <!--/*/
+            <div class="ui negative message" th:if="${#fields.hasErrors('name')}">
+                <i class="close icon"></i>
+                <div class="header">验证失败</div>
+                <p th:errors="*{name}">提交信息不符合规则</p>
+            </div>
+            /*/-->
+            <!--onclick="window.history.go(-1) 哪个页面跳转过来就返回哪个页面-->
+            <div class="ui right aligned container">
+                <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+                <button class="ui  teal submit button">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+
+<!--底部footer-->
+<footer th:replace="admin/_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <!--二维码列-->
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../../static/image/wechat.png" class="ui rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+
+            </div>
+            <!--第二列，占3个div（一个16个）-->
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                </div>
+            </div>
+            <!--第三列-->
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Tel:18342210855</a>
+                    <a href="#" class="item">Email:438599598@qq.com</a>
+                    <a href="#" class="item">WeChat:18342210855</a>
+                </div>
+            </div>
+            <!--最后一列-->
+            <div class="seven wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">BLOG</h4>
+                <p class=" m-text-thin m-text-spaced m-opacity-mini">yyy的个人博客</p>
+            </div>
+        </div>
+
+        <!--最底部的线-->
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-tiny">
+            2021 Designed by yyy
+        </p>
+    </div>
+</footer>
+
+<!--/*/<th:block th:replace="admin/_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+
+<script>
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+    $('.ui.form').form({
+        fields: {
+            title: {
+                identifier: "name",
+                rules: [{
+                    type: 'empty',
+                    prompt: '请输入分类名称'
+                }]
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

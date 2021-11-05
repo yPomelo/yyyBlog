@@ -1,0 +1,6 @@
+spring:
+  thymeleaf:
+    mode: HTML
+# profiles.active ָ���ĸ������ļ���Ч
+  profiles:
+    active: dev

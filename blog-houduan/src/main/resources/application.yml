@@ -1,0 +1,6 @@
+spring:
+  thymeleaf:
+    mode: HTML
+# profiles.active 指定哪个配置文件生效
+  profiles:
+    active: dev
